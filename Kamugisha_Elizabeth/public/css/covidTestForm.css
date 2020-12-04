@@ -7,6 +7,10 @@
   border-width: thin;
   border-color: grey;
 }
+img {
+  display: block;
+  width: 780px;
+}
 h1 {
   font-weight: bold;
 }
