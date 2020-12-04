@@ -46,10 +46,12 @@ html(lang='en')
                             input.form-control(type='text' name='nationality' required)
                             p(class='alert' id='nationalityAlert')
                     div.row
-                        label(class='col-form-label') Gender :
-                    div.col-md-6.form-check(class="genderOption")
+                        label(class='col-form-label') Gender
+                        hr
+                    div.col-md-6.form-check(class="genderOptionM")
                         input(class="form-check-input" type="radio" name="gender" id="male" value="male")
-                        label(class="form-check-label checkLabel col-4" for="male") Male 
+                        label(class="form-check-label checkLabel col-4" for="male") Male
+                    div.col-md-6.form-check(class="genderOptionF")
                         input(class="form-check-input" type="radio" name="gender" id="female" value="female")
                         label(class="form-check-label checkLabel  col-4" for="female") Female
                     p(class="alert" id="genderAlert")
@@ -64,4 +66,4 @@ html(lang='en')
                             option#ward4(value='volunteer') Volunteer
                     p(class='alert' id='categoryAlert')
 
-                    button(type='submit' class='btn btn-primary col-md-3 float-right' name='register' onclick='formValidation()') Register
+                    button(type='submit' class='btn btn-primary col-md-3 reg' name='register' onclick='formValidation()') Register

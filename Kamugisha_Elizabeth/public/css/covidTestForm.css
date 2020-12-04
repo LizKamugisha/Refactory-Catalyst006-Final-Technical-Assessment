@@ -10,6 +10,17 @@
 h1 {
   font-weight: bold;
 }
+.genderOptionM {
+  float: left;
+}
+.genderOptionF {
+  float: right;
+}
+hr {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-style: inset;
+}
 .formBox {
   text-align: left;
   width: 800px;
@@ -21,4 +32,7 @@ h1 {
   font-size: 10pt;
   margin: -5px;
   padding-bottom: -5px;
+}
+button.reg {
+  float: right;
 }
