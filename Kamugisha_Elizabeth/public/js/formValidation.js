@@ -122,6 +122,7 @@ if (surname.value == false
     && category.value == "default") {
     return false
 } else {
+    alert('Registration was successful !')
     return true
 }
 
