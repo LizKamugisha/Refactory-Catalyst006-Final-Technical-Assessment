@@ -1,0 +1,67 @@
+html(lang='en')
+    head
+        title Covid Test Form
+        //-  Bootstrap & CSS Stylesheet
+        link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous') 
+        //- Linked html document to css stylesheet
+        link(rel='stylesheet' type='text/css' href='css/covidTestForm.css')
+        //- Validation Script
+        script(src='../js/formValidation.js')
+
+    body
+        div.container-fluid(class='mainForm')
+            div(class='regheader')
+                img(src='images/form-header-image.png')
+            div(class='formTitle')
+                h3 Ministry of Health
+                h1 COVID-19 (CORINA VIRUS)
+                h3 Virus-Test Registration Form
+            form(class='form-group row' name='covidTestReg' action='/covidTestRegistration' method='POST')
+                div.container.formBox
+                    div.row.row-cols-2
+                        .col-md-6
+                            label(for='surname' class='col-form-label') Surname
+                            input.form-control(type='text' name='surname' required)
+                            p(class='alert' id='surnameAlert')
+                        .col-md-6
+                            label(for='name' class='col-form-label') Given Name
+                            input.form-control(type='text' name='name' required)
+                            p(class='alert' id='nameAlert')
+                    div.row.row-cols-2
+                        .col-md-6
+                            label(for='dob' class='col-form-label') Date of Birth
+                            input.form-control(type='text' name='dob' placeholder='DD/MM/YYY' required)
+                            p(class='alert' id='dobAlert')
+                        .col-md-6
+                            label(for='residence' class='col-form-label') Place of residence
+                            input.form-control(type='text' name='residence' required)
+                            p(class='alert' id='residenceAlert')
+                    div.row.row-cols-2
+                        .col-md-6
+                            label(for='occupation' class='col-form-label') Occupation
+                            input.form-control(type='text' name='occupation' required)
+                            p(class='alert' id='occupationAlert')
+                        .col-md-6
+                            label(for='nationality' class='col-form-label') Nationality
+                            input.form-control(type='text' name='nationality' required)
+                            p(class='alert' id='nationalityAlert')
+                    div.row
+                        label(class='col-form-label') Gender :
+                    div.col-md-6.form-check(class="genderOption")
+                        input(class="form-check-input" type="radio" name="gender" id="male" value="male")
+                        label(class="form-check-label checkLabel col-4" for="male") Male 
+                        input(class="form-check-input" type="radio" name="gender" id="female" value="female")
+                        label(class="form-check-label checkLabel  col-4" for="female") Female
+                    p(class="alert" id="genderAlert")
+                    
+                    div.row
+                        label(for='category' class='col-form-label') Select Catagory
+                        select.form-control(name='category' required)
+                            option(selected='' value='default') -- Select Category --
+                            option#ward1(value='returnee') Returnee
+                            option#ward2(value='contact') Contact
+                            option#ward3(value='alert') Alert
+                            option#ward4(value='volunteer') Volunteer
+                    p(class='alert' id='categoryAlert')
+
+                    button(type='submit' class='btn btn-primary col-md-3 float-right' name='register' onclick='formValidation()') Register

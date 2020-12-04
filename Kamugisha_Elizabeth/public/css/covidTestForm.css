@@ -1,0 +1,24 @@
+.mainForm {
+  margin-top: 50px;
+  padding: 10px;
+  text-align: center;
+  width: 800px;
+  border-style: solid;
+  border-width: thin;
+  border-color: grey;
+}
+h1 {
+  font-weight: bold;
+}
+.formBox {
+  text-align: left;
+  width: 800px;
+  font-size: 14pt;
+  padding: 50px;
+}
+.alert {
+  color: #ff1d1d;
+  font-size: 10pt;
+  margin: -5px;
+  padding-bottom: -5px;
+}
