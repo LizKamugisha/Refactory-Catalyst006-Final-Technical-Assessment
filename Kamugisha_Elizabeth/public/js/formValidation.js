@@ -16,12 +16,11 @@ if(surRegex.test(surname.value) == false){
     surname.style.border = "1px solid red";
     text = "This field is required";
     document.getElementById("surnameAlert").innerHTML = text;
-    // return false
+    return false
 } else {
     surname.style.border = "";
     text = "";
     document.getElementById("surnameAlert").innerHTML = text;
-    // return true
   }
 
 // Validating name input to have only 1-16 alphabate charcters
@@ -30,28 +29,27 @@ if(nameRegex.test(name.value) == false){
     name.style.border = "1px solid red";
     text = "This field is required";
     document.getElementById("nameAlert").innerHTML = text;
-    // return false
+    return false
 } else {
     name.style.border = "";
     text = "";
     document.getElementById("nameAlert").innerHTML = text;
-    // return true
   }
 
-// ??Validating DOB to accept only a Patient who is at least One year old and at most 150 years old ??
+// Not sure how to validate DOB to accept only users who are 1<150 years old but here was my failed attempt
+// if (dobRegex.test(birthday.value) == false && (birthday.value) == 1<150) {...}
 
 // Date of Birth Validation to accept numbers in form of = DD/MM/YYYY
 let dobRegex = /^(?:(?:(?:29([-/])02(?:\1)(?:(?:(?:1[8-9]|20)(?:04|08|[2468][048]|[13579][26]))|2000))|(?:(?:(?:0[1-9]|1[0-9]|2[0-8])([-/])(?:0[1-9]|1[0-2]))|(?:29|30)([-/])(?:0(?:1|[3-9])|(?:1[0-2]))|31([-/])(0[13578]|1[02]))(?:\2|\3|\4)(?:1[8-9]|20)\d\d))/;
-if (dobRegex.test(birthday.value) == false) {
+if (dobRegex.test(birthday.value) == false && (birthday.value) == 1<150){
     birthday.style.border = "1px solid red";
     text = "Select Date of Birth";
     document.getElementById("dobAlert").innerHTML = text;
-    // return false
+    return false
 } else {
     birthday.style.border = "";  
     text = "";
     document.getElementById("dobAlert").innerHTML = text;
-    // return true
   }
 
 // Validating residence input to have only 1-20 alphabate charcters
@@ -60,12 +58,11 @@ if(residenceRegex.test(residence.value) == false){
     residence.style.border = "1px solid red";
     text = "This field is required";
     document.getElementById("residenceAlert").innerHTML = text;
-    // return false
+    return false
 } else {
-    name.style.border = "";
+    residence.style.border = "";
     text = "";
     document.getElementById("residenceAlert").innerHTML = text;
-    // return true
   }
 
 // Validating occupation input to have only 5-50 alphabate charcters
@@ -74,12 +71,11 @@ if(occupationRegex.test(occupation.value) == false){
     occupation.style.border = "1px solid red";
     text = "This field is required";
     document.getElementById("occupationAlert").innerHTML = text;
-    // return false
+    return false
 } else {
-    name.style.border = "";
+    occupation.style.border = "";
     text = "";
     document.getElementById("occupationAlert").innerHTML = text;
-    // return true
   }
 
 // Validating nationality input to have only 5-50 alphabate charcters
@@ -88,23 +84,21 @@ if(nationalityRegex.test(nationality.value) == false){
     nationality.style.border = "1px solid red";
     text = "This field is required";
     document.getElementById("nationalityAlert").innerHTML = text;
-    // return false
+    return false
 } else {
-    name.style.border = "";
+    nationality.style.border = "";
     text = "";
     document.getElementById("nationalityAlert").innerHTML = text;
-    // return true
   }
 
 // Gender Validation = Gender must be selected
 if(genderM.checked == false && genderF.checked == false){
     text = "Please select your gender.";
     document.getElementById("genderAlert").innerHTML = text;
-    // return false
+    return false
 } else {
     text = "";
     document.getElementById("genderAlert").innerHTML = text;
-    // return true
     }
 
 // Category Validation = Category selection is mandatory
@@ -112,26 +106,13 @@ if (category.value == "default") {
     category.style.border = "1px solid red";
     text = "Select Patient Category";
     document.getElementById("categoryAlert").innerHTML = text;
-    // return false
+    return false
 } else {
     category.style.border = "";
     text = "";
     document.getElementById("categoryAlert").innerHTML = text;
-    // return true
-  }
-
-// Prevent Submission of wrong data
-if (surname.value == false 
-    && name.value == false
-    && birthday.value == false
-    && residence.value == false 
-    && occupation.value == false
-    && nationality.value == false  
-    && category.value == "default") {
-    return false
-} else {
     alert('Registration was successful !')
     return true
-}
-
+  }
+  
 };
