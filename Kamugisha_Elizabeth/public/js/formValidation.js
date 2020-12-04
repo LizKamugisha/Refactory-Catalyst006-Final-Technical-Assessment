@@ -14,26 +14,28 @@ const formValidation =() => {
 let surRegex = /^[a-zA-Z\s]{1,16}$/;
 if(surRegex.test(surname.value) == false){
     surname.style.border = "1px solid red";
-    text = "This feild is required";
+    text = "This field is required";
     document.getElementById("surnameAlert").innerHTML = text;
     // return false
 } else {
     surname.style.border = "";
     text = "";
     document.getElementById("surnameAlert").innerHTML = text;
+    // return true
   }
 
 // Validating name input to have only 1-16 alphabate charcters
 let nameRegex = /^[a-zA-Z\s]{1,16}$/;
 if(nameRegex.test(name.value) == false){
     name.style.border = "1px solid red";
-    text = "This feild is required";
+    text = "This field is required";
     document.getElementById("nameAlert").innerHTML = text;
     // return false
 } else {
     name.style.border = "";
     text = "";
     document.getElementById("nameAlert").innerHTML = text;
+    // return true
   }
 
 // ??Validating DOB to accept only a Patient who is at least One year old and at most 150 years old ??
@@ -44,59 +46,65 @@ if (dobRegex.test(birthday.value) == false) {
     birthday.style.border = "1px solid red";
     text = "Select Date of Birth";
     document.getElementById("dobAlert").innerHTML = text;
+    // return false
 } else {
     birthday.style.border = "";  
     text = "";
-    document.getElementById("dobAlert").innerHTML = text; 
+    document.getElementById("dobAlert").innerHTML = text;
+    // return true
   }
 
 // Validating residence input to have only 1-20 alphabate charcters
 let residenceRegex = /^[a-zA-Z\s]{1,20}$/;
 if(residenceRegex.test(residence.value) == false){
     residence.style.border = "1px solid red";
-    text = "This feild is required";
+    text = "This field is required";
     document.getElementById("residenceAlert").innerHTML = text;
     // return false
 } else {
     name.style.border = "";
     text = "";
     document.getElementById("residenceAlert").innerHTML = text;
+    // return true
   }
 
 // Validating occupation input to have only 5-50 alphabate charcters
 let occupationRegex = /^[a-zA-Z\s]{5,50}$/;
 if(occupationRegex.test(occupation.value) == false){
     occupation.style.border = "1px solid red";
-    text = "This feild is required";
+    text = "This field is required";
     document.getElementById("occupationAlert").innerHTML = text;
     // return false
 } else {
     name.style.border = "";
     text = "";
     document.getElementById("occupationAlert").innerHTML = text;
+    // return true
   }
 
 // Validating nationality input to have only 5-50 alphabate charcters
 let nationalityRegex = /^[a-zA-Z\s]{5,50}$/;
 if(nationalityRegex.test(nationality.value) == false){
     nationality.style.border = "1px solid red";
-    text = "This feild is required";
+    text = "This field is required";
     document.getElementById("nationalityAlert").innerHTML = text;
     // return false
 } else {
     name.style.border = "";
     text = "";
     document.getElementById("nationalityAlert").innerHTML = text;
+    // return true
   }
 
 // Gender Validation = Gender must be selected
 if(genderM.checked == false && genderF.checked == false){
-    text = "*<b>Please select your gender.</b>";
+    text = "Please select your gender.";
     document.getElementById("genderAlert").innerHTML = text;
     // return false
 } else {
     text = "";
-    document.getElementById("genderAlert").innerHTML = text; 
+    document.getElementById("genderAlert").innerHTML = text;
+    // return true
     }
 
 // Category Validation = Category selection is mandatory
